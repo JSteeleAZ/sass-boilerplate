@@ -1,15 +1,15 @@
 @charset "UTF-8";
 
 // Brand|Theme
-@import 'globals'; // Baselines for breakpoints, padding, fonts, links, navbar.
+@import 'globals'; // Resets and baselines for breakpoints, padding, fonts, links, navbar.
 @import 'brand/fonts'; // font-face declarations.
 @import 'brand/palette'; // Named colors, including variations for text-on-background.
 @import 'brand/typography'; // Headings, paragraph, lists.
 
 // Mixins|Utilities
-@import 'common-utils'; // Common utilities for overflow, responsive images, flexbox, gutter add/remove.
-@import 'color-functions'; // Helper functions for shading, blends, drop-shadows.
-@import 'font-sizing'; // Utilities for font-sizing to rems based on baselines.
+@import 'utils/common-utils'; // Common utilities for overflow, responsive images, flexbox, gutter add/remove.
+@import 'utils/color-functions'; // Helper functions for shading, blends, drop-shadows.
+@import 'utils/font-sizing'; // Utilities for font-sizing to rems based on baselines.
 
 // Frameworks
 // Builders for frameworks such as Vuetify, Bootstrap.
