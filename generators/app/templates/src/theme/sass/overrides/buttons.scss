@@ -1,0 +1,79 @@
+
+.btn-custom {
+
+  @extend .btn;
+
+  // padding-vertical, padding-horizontal, font-size, line-height, border-radius
+  @include button-size(8px, 20px, 17px, 1, 0);
+  
+  @include build-font-size(17px, $line-height-base, true);
+  font-family: $font-family-main-navigation;
+  font-weight: 300;
+  border-width: 1px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  letter-spacing: 0.1rem;
+
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  backface-visibility: hidden;
+
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+  
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  
+  -webkit-transition-property:    color, background-color, border-color;
+  -moz-transition-property:       color, background-color, border-color;
+  -o-transition-property:         color, background-color, border-color;
+  transition-property:            color, background-color, border-color;
+}
+
+.btn-custom-base {
+  border: 1px solid $cello;
+  color: $cello;
+  &:hover,
+  &:focus {
+      color: $white;
+      @extend .cello-bg;
+      border-color: $cello;
+  }
+}
+
+.btn-custom-cello {
+  border: 1px solid $cello;
+  color: $cello !important;
+  &:hover,
+  &:focus {
+      color: $white !important;
+      @extend .cello-bg;
+      border-color: $cello;
+  }
+}
+
+.btn-custom-white-border,
+.btn-custom-white {
+  border: 1px solid $white;
+  color: $white;
+  &:hover,
+  &:focus {
+      color: $cello;
+      @extend .white-bg;
+      border-color: $white;
+  }
+}
+
+.cello-bg .btn-custom-base {
+  @extend .btn-custom-white-border;
+}
+
+// Button colors
+// Usage: @include button-variant(text-color, background-color, border-color)
+//

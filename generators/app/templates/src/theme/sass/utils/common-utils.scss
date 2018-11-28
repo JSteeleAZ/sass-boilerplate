@@ -1,0 +1,201 @@
+
+// OVERFLOWS
+//
+
+.fix-overflow {
+  overflow-y: hidden;
+}
+
+.clear, .cf {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+
+// IMAGE HELPERS
+//
+
+.image-helper--cover {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.inline-image--centered {
+  > img { margin: 0 auto; }
+}
+
+.block-img-responsive {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+// NOTE: Overrides Bootstrap
+img.responsive {
+  width: 100%;
+  height: auto;
+}
+
+
+// MIXINS
+//
+
+@mixin remove-gutters($left-right) {
+
+  @if $left-right == lr {
+      padding-right: 0;
+      padding-left: 0;
+
+  } @else if $left-right == l {
+      padding-left: 0;
+
+  } @else if $left-right == r {
+      padding-right: 0;
+  }
+}
+
+@mixin reset-gutters($left-right, $fudge: 0) {
+
+  $calculated-gutter: ( $grid-gutter-width / 2 ) - $fudge;
+
+  @if $left-right == lr or $left-right == left-right {
+      padding-right: $calculated-gutter;
+      padding-left: $calculated-gutter;
+
+  } @else if $left-right == l or $left-right == left {
+      padding-left: $calculated-gutter !important;
+
+  } @else if $left-right == r or $left-right == right {
+      padding-right: $calculated-gutter !important;
+  }
+}
+
+
+// GUTTER CLASSES
+//
+
+.no-gutter > [class*='col-'] {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.no-gutter--lr {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.no-gutter--l { padding-left: 0; }
+.no-gutter--r { padding-right: 0; }
+
+.no-gutter-at-all {
+  padding-right: 0;
+  padding-left: 0;
+  
+  > .row {
+      margin-right: 0;
+      margin-left: 0;
+      
+      > [class*='col-'] {
+          padding-right: 0;
+          padding-left: 0;
+      }
+  } 
+}
+
+
+// ALIGNMENT and PADDING
+//
+
+.vertical-align--flex .row
+, .vertical-align--flex .flex-row {
+  
+  // TODO: Add in equalizing for mobile-first stacked content.
+
+  @media (min-width: $screen-sm-min) {
+
+      display: flex;
+      -ms-flex-direction: row;
+      -webkit-flex-direction: row;
+      flex-direction: row;
+
+      > [class^="col-"],
+      > [class*=" col-"] {
+      
+          display: flex;
+          align-items: center;
+      }
+  }
+}
+
+  // Shortcut for content editors 
+  //
+  .equalize {
+      @extend .vertical-align--flex;
+  }
+
+
+// MARGINS and PADDING
+//
+
+// Margins
+
+.mt-xhuge { 
+  margin-top: 3rem;
+  @media (min-width: $screen-sm-min){
+      margin-top: 8rem;
+  }
+}
+.mt-huge { margin-top: 3.5rem; }
+.mt-large { margin-top: 2rem; }
+.mt-small { margin-top: 1rem; }
+
+.mb-xhuge { 
+  margin-bottom: 3rem;
+  @media (min-width: $screen-sm-min){
+      margin-bottom: 8rem; 
+  }
+}
+.mb-huge { margin-bottom: 3.5rem; }
+.mb-large { margin-bottom: 2rem; }
+.mb-small { margin-bottom: 1rem; }
+
+
+// Padding
+
+.no-padding { padding: 0 !important; }
+
+.pt-huge { padding-top: 14rem !important; }
+.pt-large { 
+  
+  padding-top: 9rem !important; 
+
+  @media (min-width: $screen-sm-min) {
+      padding-top: 5rem !important;
+  }
+}
+.pt-medium { padding-top: 5rem !important; }
+.pt-small { padding-top: 2rem !important; }
+
+.pb-huge { padding-bottom: 14rem !important; }
+.pb-large { 
+  
+  padding-bottom: 9rem !important; 
+
+  @media (min-width: $screen-sm-min) {
+      padding-bottom: 5rem !important;
+  }
+}
+.pb-medium { padding-bottom: 5rem !important; }
+.pb-small { padding-bottom: 2rem !important; }
+
+
+// ADA ACCESSIBILITY
+// Helpers and tools for Sec.508 comformance
+//
+
+p#skip { display:none; }
+

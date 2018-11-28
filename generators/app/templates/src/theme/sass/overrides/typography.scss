@@ -1,0 +1,111 @@
+
+body {
+  font-family: $font-family-sans-serif;
+}
+
+input, select, textarea, button {
+  font-family: $font-family-sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, .heading {
+  font-family: $font-family-sans-serif;
+}	
+
+// HEADINGS
+//
+// NOTE: To prevent collapsing margin problems, kill top margin and only use
+// bottom margin...
+// http://csswizardry.com/2012/06/single-direction-margin-declarations/
+
+h1, h2, h3, h4, h5, 
+.h1, .h2, .h3, .h4, .h5 {
+  outline: 0;
+  margin: 0 0 2rem;
+  color: $cello;
+}
+
+h1, .h1 {
+  font-weight: 700;
+  @include build-font-size(32px, 1.2, true);
+  margin-bottom: 1.5rem;
+  @media (min-width: $screen-sm-min) {
+      @include build-font-size(32px, 1.25, true);
+  }
+}
+
+h2, .h2 {
+  @include build-font-size(36px, 1.1, true);
+  font-weight: 700;
+}
+
+h3, .h3 {
+  @include build-font-size(21px, $line-height-base, true);
+  font-weight: 700;
+}
+
+h4, .h4 {
+  @include build-font-size(16px, $line-height-base, true);
+  font-weight: 700;
+}
+
+h1, h2, h3, h4, h5, 
+.h1, .h2, .h3, .h4, .h5 {
+  &.light { font-weight: 300; }
+}
+
+// BODY TEXT
+//
+
+strong, .strong { font-weight: 700; }
+
+p {
+  @include build-font-size($font-size-base, $line-height-base, true);
+  margin: 0 0 1.5rem;
+  
+  &.small {
+  }
+
+  &.medium {
+  }
+
+  &.large {
+      @include build-font-size(20px, $line-height-base, true);
+  }
+
+  // Related to collapsing margins...
+  //
+  &:last-of-type {
+      margin-bottom: 0 !important;
+  }
+
+  // Links inside paragraph tag get slightly different treatment...
+  //
+  a, a:link, a:visited, a:active {
+      color: inherit;
+      text-decoration: underline;
+      font-weight: 500;
+  }
+
+  a:hover, a:focus {
+      text-decoration: none;
+  }
+}
+
+ol, ul {
+  padding-left: 40px;
+  margin-top: 20px;
+}
+
+ol, ul {
+  &.no-indent {
+      padding-left: 0;
+  }
+}
+
+ol, ul {
+  li { @include build-font-size($font-size-base, $line-height-base, true); }
+}
+
+ol.lower-alpha {
+  li { list-style-type: lower-alpha; }
+}

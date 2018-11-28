@@ -1,0 +1,48 @@
+
+// BASE COLORS
+
+$white:         #ffffff;
+$black:         #000000;
+$lighter-grey:  #eeeeee;
+$light-grey:    #c2c2c2;
+$dark-grey:     #5b5b5b;
+$ebony:         #2f3338;
+
+$cello:         #304967; // a/k/a blue, rgb:48,73,103
+$darker-grey:   #2a2a2a;
+
+
+// CLIENT BRAND COLORS
+// add here & build helpers below...
+
+// TEXT
+
+.white { color: $white; }
+.black { color: $black; }
+.light-grey { color: $light-grey; }
+.dark-grey { color: $dark-grey; }
+.ebony { color: $ebony; }
+.cello { color: $cello; }
+
+// BACKGROUND
+
+.white-bg { background-color: $white; }
+.black-bg { background-color: $black; }
+.lighter-grey-bg { background-color: $lighter-grey; }
+.light-grey-bg { background-color: $light-grey; }
+.dark-grey-bg { background-color: $dark-grey; }
+.ebony-bg { background-color: $ebony; }
+.darker-grey-bg { background-color: $darker-grey; }
+.cello-bg { background-color: $cello; }
+
+// Inherit text colors from background...
+
+.white-bg, .light-grey-bg, .light-grey-bg,
+.white-bg a, .light-grey-bg a, .light-grey-bg a { 
+    @extend .cello;
+}
+
+.black-bg, .ebony-bg, .darker-grey-bg, .cello-bg, 
+.black-bg a, .ebony-bg a, .cello-bg a { 
+    @extend .white; 
+}

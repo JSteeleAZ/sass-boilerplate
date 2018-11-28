@@ -1,0 +1,57 @@
+// MEDIA QUERIES
+//
+
+$screen-xs-min: 568px; // iPhone-5 landscape //** Deprecated `$screen-xs-min` (480px) as of v3.2.0
+$screen-iphone6-landscape: 667px;
+$screen-sm-min: 768px; // BS default
+$screen-mdsm-min: 883px; // medium small
+$screen-md-min: 992px; // BS default
+$screen-lg-min: 1200px; // BS default
+$screen-xlg-min: 1400px;
+
+// GRID, LAYOUT
+//
+
+$padding-xs: 5%;
+$padding-mdsm: 10.8333%;
+
+// "Extend" these rules onto other rules...
+%content-padding--left {
+  padding-left: $padding-xs !important;
+
+  @media (min-width: $screen-mdsm-min) {
+    padding-left: $padding-mdsm !important;
+  }
+}
+
+%content-padding--right {
+  padding-right: $padding-xs !important;
+
+  @media (min-width: $screen-mdsm-min) {
+    padding-right: $padding-mdsm !important;
+  }
+}
+
+// TYPOGRAPHY
+//
+
+$text-color: $ebony;
+
+$font-family-sans-serif: Helvetica, Arial, sans-serif;
+$font-family-sans-serif-secondary: Helvetica, Arial, sans-serif;
+$font-family-base: $font-family-sans-serif;
+$font-family-main-navigation: 'Archivo Narrow', Arial, Helvetica, sans-serif;
+$font-family-serif: 'Prociono', 'Georgia', 'Times New Roman', serif;
+
+$font-size-base: 16px;
+$font-size-large: ceil(($font-size-base * 1.125)); // ~18px
+$font-size-small: ceil(($font-size-base * 0.85)); // ~13px
+
+$line-height-base: 1.428571429; // 20/14
+$line-height-computed: floor(($font-size-base * $line-height-base)); // ~20px
+
+$link-hover-decoration: none;
+
+$link-color: $text-color;
+$link-hover-color: darken($link-color, 15%);
+$link-hover-decoration: underline;
