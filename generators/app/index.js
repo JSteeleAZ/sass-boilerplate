@@ -11,10 +11,6 @@ module.exports = class extends Generator {
   writing() {
     this.log('Writing Theme files...');
 
-    this.fs.copy(
-      this.templatePath('theme/**'),
-      //this.destinationPath('**')
-      this.destinationPath('theme/')
-    );
+    this.fs.copy(this.templatePath('theme/**'), this.destinationPath('theme/'));
   }
 };
